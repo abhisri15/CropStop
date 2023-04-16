@@ -6,7 +6,7 @@ import pickle
 app = Flask(__name__)
 
 # Load the Random Forest Classifier model
-model = pickle.load(open("crop recommender\mysaved_mdrecommen_pickle.pkl", "rb"))
+model = pickle.load(open("mysaved_mdrecommen_pickle.pkl", "rb"))
 
 # Define the route for the home page
 @app.route("/", methods = ["GET","POST"])
