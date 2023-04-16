@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Nunito);
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin:0;
+  padding:0;
+	perspective: 1px;
+	transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: Nunito;
+}
+
+h1 {
+   font-size: 250%
+}
+
+p {
+  font-size: 30%;
+  line-height: 150%;
+  color: #333;
+}
+
+.slide {
+  position: relative;
+  padding: 25vh 10%;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+	transform-style: inherit;
+    padding-right:33%;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  width: 320px;
+  height: 240px;
+  transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, .7);
+}
+
+.title {
+  width: 50%;
+  padding: 5%;
+  border-radius: 5px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+label{
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+button{
+    margin-left:155px;
+}
+h1
+{
+
+    text-decoration: underline;
+}
+label{
+    font-weight:bold;
+}
+div{
+    margin-bottom:10px;
+}
+.slide:nth-child(2n+1) .title {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.slide, .slide:before {
+  background: 50% 50% / cover;
+}
+
+.header {
+  text-align: right;
+  font-size: 175%;
+  color: #fff;
+  text-shadow: 0 2px 2px #000;
+}
+button
+{
+    font-weight:bold;
+}
+
+#title {
+  background-image: url("https://images.pexels.com/photos/1486976/pexels-photo-1486976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  z-index:2;
+}
+
+
+
+#slide1:before {
+  background-image: url("https://images.pexels.com/photos/1486976/pexels-photo-1486976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  transform: translateZ(-1px) scale(2);
+}
+
+
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Price Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <div id="slide1" class="slide">
+        <div class="title">
+          <p><div class="container my-3 "></div>
+  <h1 class="text-center text-white">Crop Price Prediction</h1>
+
+        <div class="float-container">
+            <div class="float-child">
+                <form  action="{{url_for('predict')}}" method="POST" class="mx-5">
+        <div class="form-group">
+            <label for="state">Commodity</label>
+            <select class="form-control" id="commodity" name = "commodity" required="required" placeholder="Commodity">
+                <option value="" disabled selected>Commodity</option>
+                <option value="0">Amaranthus</option>
+                <option value="1">Bitter gourd</option>
+                <option value="2">Bottle gourd</option>
+                <option value="3">Brinjal</option>
+                <option value="4">Cabbage</option>
+                <option value="5">Carrot</option>
+                <option value="6">Cauliflower</option>
+                <option value="7">Cowpea(Veg)</option>
+                <option value="8">Cucumbar(Kheera)</option>
+                <option value="9">Drumstick</option>
+            </select>
+            <label for="state">State</label>
+            <select class="form-control" id="state" name = "state" required="required" placeholder="State" onchange="updateDistrict()" >
+                  <option value="" disabled selected>State</option>
+                <option value="19">Odisha</option>
+                <option value="12">Kerala</option>
+            </select>
+
+            <label for="state">District</label>
+            <select class="form-control" id="district" name = "district" required="required" placeholder="District">
+                <option value="" disabled selected>District</option>
+              <option value="0">Balasore</option>
+              <option value="1">Bargarh</option>
+              <option value="2">Bolangir</option>
+              <option value="3">Boudh</option>
+              <option value="4">Cuttack</option>
+              <option value="5">Dhenkanal</option>
+              <option value="6">Gajapati</option>
+              <option value="7">Ganjam</option>
+              <option value="8">Kalahandi</option>
+              <option value="9">Kendrapara</option>
+              <option value="10">Keonjhar</option>
+              <option value="11">Khurda</option>
+              <option value="12">Koraput</option>
+              <option value="13">Mayurbhanja</option>
+              <option value="14">Nayagarh</option>
+              <option value="15">Nowarangpur</option>
+              <option value="16">Nuapada</option>
+              <option value="17">Sonepur</option>
+              <option value="18">Sundergarh</option>
+                
+            </select>
+
+            <label for="market">Market:</label>
+            <input type="input" id="market" name="market" value="0"><br>
+        </div>
+                    <div class="mx-auto"><button type="submit" class=" mt-5" > Submit </button></div>
+                </form>
+            </div>
+            </div>
+
+
+
+
+      </div>
+    </div>
+</body>
+</html>
