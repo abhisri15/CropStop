@@ -1,6 +1,7 @@
 # CropStop
 
-## Team Members:
+
+## Contributers:
 Pulkit Sinha 
 
 Jayadip Sahoo 
@@ -8,6 +9,7 @@ Jayadip Sahoo
 Abhikalp Srivastava 
 
 Ayush Jagatdeb
+
 
 ## Problem Theme: AgroTech
 
@@ -45,12 +47,12 @@ agricultural landscape.
 ## Features:
 News and Latest Innovations: Stay up-to-date with the latest
 news and innovations in the agricultural industry with CropStop. Our
-platform uses the News API to provide users with real-time news and
+platform uses the Newscatcher API to provide users with real-time news and
 insights from trusted sources around the world. From new farming
 technologies to market trends and policy developments, our news service
 covers it all.
 
-## Services <img src='https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/gifs/handShake.gif' width="50px" height=50px>:
+## Services:
 At CropStop, we offer a comprehensive suite of services
 designed to help farmers improve their crop yields and reduce the risks
 and costs associated with farming. Our services include:
@@ -168,3 +170,8 @@ between our webpage and machine learning models to prevent data breaches
 and unauthorized access will be maintained. This will ensure that our
 users can use the platform with confidence, knowing that their past
 activities and data are stored safely and securely.
+
+
+## Contributions:
+
+You are invited to participate in the development of this website project by making contributions. To do so, you can fork the project, make the desired changes, and then submit a pull request. Once you have completed these steps, you are ready to get started.
